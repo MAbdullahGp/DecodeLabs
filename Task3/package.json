@@ -1,0 +1,18 @@
+{
+  "name": "phishing-threat-analyzer",
+  "version": "1.0.0",
+  "description": "Interactive Cybersecurity Phishing Analyzer and Threat Identification Workbench",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y http-server . -p 3000 -c-1",
+    "dev": "npx -y http-server . -p 3000 -c-1"
+  },
+  "keywords": [
+    "cybersecurity",
+    "phishing-detector",
+    "threat-analysis",
+    "security-awareness"
+  ],
+  "author": "Antigravity Security AI",
+  "license": "MIT"
+}

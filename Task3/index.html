@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberGuard | Phishing Threat Analyzer & Security Workbench</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="header-banner">
+    <div class="brand-container">
+      <div class="brand-icon">🛡️</div>
+      <div>
+        <div class="brand-title">CyberGuard Threat Inspector</div>
+        <div class="brand-subtitle">Phishing Analysis & Security Workbench v2.4</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-btn active" data-tab="tab-scanner">
+        <span>📬</span> Inbox Scanner
+      </button>
+
+      <button class="nav-btn" data-tab="tab-matrix">
+        <span>📑</span> Red Flag Matrix
+      </button>
+      <button class="nav-btn" data-tab="tab-quiz">
+        <span>🎯</span> Security Quiz
+      </button>
+    </nav>
+
+    <!-- System Status -->
+    <div class="system-status">
+      <div class="status-dot"></div>
+      <span>ENGINE ONLINE</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- Hero Card Banner -->
+    <div class="hero-banner-card">
+      <div class="hero-text">
+        <h1>Phishing Threat Analysis & Detection Workbench</h1>
+        <p>Inspect sample messages, decode deceptive hyperlinks, evaluate header authentication (SPF/DKIM/DMARC), and identify psychological urgency triggers used in modern cyber attacks.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Samples</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">98.4%</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: INBOX SCANNER -->
+    <section id="tab-scanner" class="tab-content active">
+      <div class="scanner-grid">
+        
+        <!-- Left Sidebar: Email List -->
+        <aside class="email-sidebar">
+          <div class="section-title">
+            <span>Sample Messages</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Select to analyze</span>
+          </div>
+          <div id="emailList" class="email-list">
+            <!-- Dynamic Javascript Email List -->
+          </div>
+        </aside>
+
+        <!-- Right Main: Email Analysis Display -->
+        <div class="email-display-panel">
+          
+          <!-- Email Card -->
+          <div class="email-card">
+            <!-- Email Header Meta -->
+            <div class="email-header-meta">
+              <div class="meta-row">
+                <span class="meta-label">Subject:</span>
+                <span id="dispSubject" class="meta-value" style="font-weight:700;">Loading...</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">From:</span>
+                <span id="dispSender" class="meta-value">Loading...</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Reply-To:</span>
+                <span id="dispReplyTo" class="meta-value">Loading...</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Date:</span>
+                <span id="dispDate" class="meta-value">Loading...</span>
+              </div>
+
+              <!-- Auth Status Bar -->
+              <div class="authentication-bar">
+                <span id="authSpf" class="auth-tag">SPF: CHECKING</span>
+                <span id="authDkim" class="auth-tag">DKIM: CHECKING</span>
+                <span id="authDmarc" class="auth-tag">DMARC: CHECKING</span>
+              </div>
+            </div>
+
+            <!-- Email Body Content with Highlights -->
+            <div id="dispBody" class="email-body-content">
+              Loading email body text...
+            </div>
+          </div>
+
+          <!-- Threat Analysis & Red Flags Section -->
+          <div class="analysis-dashboard">
+            <div class="risk-header">
+              <div class="risk-score-container">
+                <div id="riskMeter" class="risk-meter">
+                  <span id="riskScoreVal" class="risk-score-val">0%</span>
+                </div>
+                <div class="risk-title-group">
+                  <h3>Threat Assessment Verdict</h3>
+                  <div id="riskVerdict" class="risk-verdict-tag">CRITICAL PHISHING RISK</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Red Flags List -->
+            <div>
+              <h4 style="font-size:0.9rem; color:var(--text-secondary); text-transform:uppercase; margin-bottom:0.75rem; letter-spacing:0.5px;">
+                Identified Red Flags & Suspicious Indicators
+              </h4>
+              <div id="redFlagsGrid" class="red-flags-grid">
+                <!-- Dynamic Red Flags -->
+              </div>
+            </div>
+
+            <!-- Detailed Explanation -->
+            <div class="explanation-box">
+              <h4>🛡️ Threat Analysis & Safety Explanation</h4>
+              <p id="dispExplanation">Analyzing email structure...</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- TAB 3: RED FLAG REFERENCE MATRIX -->
+    <section id="tab-matrix" class="tab-content">
+      <div style="margin-bottom:1.5rem;">
+        <h2 style="font-size:1.5rem; margin-bottom:0.4rem;">Phishing Threat Matrix & Red Flag Indicators</h2>
+        <p style="color:var(--text-secondary);">Comprehensive guide to key threat vectors, psychological cues, and link deception tactics.</p>
+      </div>
+
+      <div class="matrix-grid">
+        
+        <!-- Card 1 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">📧</div>
+            <div class="matrix-title">Sender Address & Domain Spoofing</div>
+          </div>
+          <ul class="matrix-list">
+            <li>Lookalike domains (typosquatting like <code>paypaI.com</code> with uppercase i).</li>
+            <li>Free webmail providers (using <code>@gmail.com</code> for official corporate notices).</li>
+            <li>Display name spoofing where friendly name contradicts sender address.</li>
+            <li>Header mismatches between <code>From:</code> and <code>Reply-To:</code> fields.</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">🔗</div>
+            <div class="matrix-title">Hyperlink Deception & Masking</div>
+          </div>
+          <ul class="matrix-list">
+            <li>Anchor text displays a legitimate URL while underlying link points to malicious host.</li>
+            <li>Raw IP addresses used in links (e.g., <code>http://192.168.1.1/login</code>).</li>
+            <li>Suspicious low-cost top-level domains (<code>.xyz</code>, <code>.info</code>, <code>.top</code>).</li>
+            <li>URL shorteners (bit.ly, tinyurl) used to obfuscate final destination.</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">🧠</div>
+            <div class="matrix-title">Psychological Triggers & Phrasing</div>
+          </div>
+          <ul class="matrix-list">
+            <li>Extreme urgency (e.g., "Account suspended within 2 hours").</li>
+            <li>Fear tactics and monetary penalties ("$150 charge applied unless verified").</li>
+            <li>Greed / unexpected rewards ("Claim your $500 Amazon gift card").</li>
+            <li>Authority exploitation (Impersonating CEO or Law Enforcement).</li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">📎</div>
+            <div class="matrix-title">Malicious Payloads & Attachments</div>
+          </div>
+          <ul class="matrix-list">
+            <li>Executable files disguised as documents (e.g., <code>Invoice_2026.pdf.exe</code>).</li>
+            <li>Macro-enabled Office documents (<code>.docm</code>, <code>.xlsm</code>).</li>
+            <li>Password-protected ZIP/RAR archives designed to bypass gateway virus scanners.</li>
+            <li>Fake DocuSign / PDF preview links forcing credential entry.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 4: SECURITY QUIZ -->
+    <section id="tab-quiz" class="tab-content">
+      <div class="quiz-container">
+        <div style="text-align:center; margin-bottom:1.5rem;">
+          <h2 style="font-size:1.5rem; margin-bottom:0.3rem;">Security Awareness & Threat Analysis Quiz</h2>
+          <p style="color:var(--text-secondary);">Test your threat identification skills with realistic phishing scenarios.</p>
+        </div>
+
+        <div class="quiz-progress-bar">
+          <div id="quizProgressFill" class="quiz-progress-fill"></div>
+        </div>
+
+        <div id="quizCard" class="quiz-card">
+          <!-- Quiz Questions via Javascript -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>CyberGuard Security Inspector • Developed for Threat Analysis & Cyber Attack Awareness</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
